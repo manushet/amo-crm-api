@@ -22,15 +22,25 @@ class NewContactEvent extends Event
 
     protected function fillInEntity(): void
     {
-        $this->entity->setId((int)$this->entityParams['contacts[add][0][id]']);
+        if (isset($this->entityParams['contacts[add][0][id]'])) {
+            $this->entity->setId((int)$this->entityParams['contacts[add][0][id]']);
+        }
 
-        $this->entity->setName($this->entityParams['contacts[add][0][name]']);
+        if (isset($this->entityParams['contacts[add][0][name]'])) {
+            $this->entity->setName($this->entityParams['contacts[add][0][name]']);
+        }
 
-        $this->entity->setResponsibleUserId((int)$this->entityParams['contacts[add][0][responsible_user_id]']);
+        if (isset($this->entityParams['contacts[add][0][responsible_user_id]'])) {
+            $this->entity->setResponsibleUserId((int)$this->entityParams['contacts[add][0][responsible_user_id]']);
+        }
 
-        $this->entity->setCreatedAt((int)$this->entityParams['contacts[add][0][created_at]']);
+        if (isset($this->entityParams['contacts[add][0][created_at]'])) {
+            $this->entity->setCreatedAt((int)$this->entityParams['contacts[add][0][created_at]']);
+        }
 
-        $this->entity->setUpdatedAt((int)$this->entityParams['contacts[add][0][updated_at]']);
+        if (isset($this->entityParams['contacts[add][0][updated_at]'])) {
+            $this->entity->setUpdatedAt((int)$this->entityParams['contacts[add][0][updated_at]']);
+        }
     }
 
     protected function addNotes(): void

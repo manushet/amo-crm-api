@@ -8,7 +8,7 @@ abstract class Entity
 {
     protected int $id;
 
-    protected string $name;
+    protected string $name = "";
 
     protected int $responsibleUserId;
 
